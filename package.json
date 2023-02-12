@@ -1,7 +1,7 @@
 {
   "name": "rrr-web",
   "version": "0.1.0",
-  "homepage": "https://st61053.github.io/react-gh-pages",
+  "homepage": "https://st61053.github.io/martin-web",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
