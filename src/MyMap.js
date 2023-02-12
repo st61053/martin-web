@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 export default function MyMap() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCns95ghG7W5_WxPLavIP745dv4baLCQ5I",
+    googleMapsApiKey: process.env.GOOGLEAPI,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
