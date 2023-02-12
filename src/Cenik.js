@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,53 +13,64 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("služba 1", 120, 400),
+  createData("služba 2", 60, 300),
+  createData("služba 3", 30, 200),
+  createData("služba 4", 180, 600),
+  createData("služba 5", 210, 1400),
 ];
 
 const Cenik = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
         padding: { xs: "4em 3em", sm: "4em 6em", xl: "4em 8em" },
       }}
     >
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow sx={{ height: "80px" }}>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{
-                  "&:last-child td, &:last-child th": { border: 0 },
-                  height: "80px",
-                }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Grid container spacing={8}>
+        <Grid item md={12} lg={6} xl={6}>
+          <Box sx={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
+            <Typography variant={"h3"} gutterBottom>
+              Naše služby
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item md={12} lg={6} xl={6} sx={{ width: "100%" }}>
+          <TableContainer component={Paper} sx={{ width: "100%" }}>
+            <Table sx={{ width: "100%" }} aria-label="simple table">
+              <TableHead>
+                <TableRow sx={{ height: "80px" }}>
+                  <TableCell>Služby</TableCell>
+                  <TableCell align="center">délka&nbsp;(min)</TableCell>
+                  <TableCell align="center">cena&nbsp;(kč)</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{
+                      "&:last-child td, &:last-child th": { border: 0 },
+                      height: "80px",
+                    }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="center">{row.calories}</TableCell>
+                    <TableCell align="center">{row.fat}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+      </Grid>
+
     </Box>
   );
 };

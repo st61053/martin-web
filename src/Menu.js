@@ -16,7 +16,7 @@ import { Link } from "react-scroll";
 
 const drawerWidth = 300;
 const TEXT_COLOR = "black";
-const navItems = ["Intro", "Terapeuti", "Ceník"];
+const navItems = ["Intro", "Terapeuti", "Služby", "Akce"];
 
 const Menu = (props) => {
   const { window } = props;
@@ -40,7 +40,7 @@ const Menu = (props) => {
             smooth={true}
             offset={0}
             duration={500}
-            //onSetActive={this.handleSetActive}
+          //onSetActive={this.handleSetActive}
           >
             <ListItem key={item} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
@@ -58,22 +58,23 @@ const Menu = (props) => {
 
   return (
     <>
-        <AppBar
-          component="nav"
-          sx={{ backgroundColor: "white", color: `${TEXT_COLOR}`, transition: "top 1s", top: props.scrollDir ? "0" : "-120px" }}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Box sx={{mr: "auto", display: { xs: "none", sm: "block" } }}>
-              <img src={logo} alt="" height="100px" />
+      <AppBar
+        component="nav"
+        sx={{ backgroundColor: "white", color: `${TEXT_COLOR}`, transition: "top 1s", top: props.scrollDir ? "0" : "-120px" }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box sx={{padding: { md: "0", xl: "0 6em" }, width: "100%", display: "flex", alignItems: "center"}}>
+            <Box sx={{ mr: "auto", display: { xs: "none", sm: "block" } }}>
+              <img src={logo} alt="" height={"80px"} />
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
@@ -86,14 +87,15 @@ const Menu = (props) => {
                   offset={0}
                   duration={800}
                 >
-                  <Button key={item} sx={{ color: `${TEXT_COLOR}` }}>
+                  <Button key={item} sx={{ color: `${TEXT_COLOR}`, pr: "1em", pl: "1em" }}>
                     {item}
                   </Button>
                 </Link>
               ))}
             </Box>
-          </Toolbar>
-        </AppBar>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <Box component="nav">
         <Drawer
           container={container}

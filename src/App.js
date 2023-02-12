@@ -4,7 +4,10 @@ import Cenik from "./Cenik";
 import Menu from "./Menu";
 import MyMap from "./MyMap";
 import Slider from "./Slider";
+import Box from "@mui/material/Box";
 import Terapeuti from "./Terapeuti";
+import { Parallax, Background } from "react-parallax";
+import { Typography } from "@mui/material";
 
 function App() {
   const threshold = 0;
@@ -41,6 +44,16 @@ function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+
+  const insideStyles = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)"
+  };
+
+  const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
   return (
     <div>
       <Menu scrollDir={scrollDir} />
@@ -50,12 +63,28 @@ function App() {
       <Element name="Terapeuti" className="element">
         <Terapeuti />
       </Element>
-      <Element name="Ceník" className="element">
+      <Parallax bgImage={image1} strength={500}>
+        <Box style={{ height: 500 }}>
+          <Box style={insideStyles}>
+            <Typography
+              variant="h1"
+              sx={{ color: "white" }}>
+              PARALLAX
+            </Typography>
+          </Box>
+        </Box>
+      </Parallax>
+      <Element name="Služby" className="element">
         <Cenik />
       </Element>
-      <Element name="Kontakt" className="element">
+      <Element name="Akce" className="element">
         <MyMap />
       </Element>
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "center", height: "40vh", backgroundColor: "lightgray" }}>
+        <Typography variant={"h3"} gutterBottom>
+          FOOTER
+        </Typography>
+      </Box>
     </div>
   );
 }

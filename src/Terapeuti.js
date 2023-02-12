@@ -72,14 +72,14 @@ const Terapeuti = () => {
       sx={{
         minHeight: "100vh",
         padding: { xs: "4em 3em", sm: "4em 6em", xl: "4em 8em" },
-        backgroundColor: "#e6e6e6"
+        //backgroundColor: "#e6e6e6"
       }}
     >
       <Grid container spacing={4}>
         {TERAPEUTI &&
           TERAPEUTI.map((terapeut, index) => (
             <Grid key={index} item xs={12} sm={6} md={4} lg={3} xl={3}>
-              <Card sx={{ height: "50vh" }}>
+              <Card sx={{ minHeight: "45vh" }}>
                 <CardContent
                   sx={{
                     display: "flex",

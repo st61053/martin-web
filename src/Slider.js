@@ -17,15 +17,15 @@ const Slider = () => {
     },
     {
       img: "https://via.placeholder.com/1920x1080?text=IMAGE",
-      title: "CENÍK",
+      title: "SLUŽBY",
       dec: "SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT",
-      to: "Ceník",
+      to: "Služby",
     },
     {
       img: "https://via.placeholder.com/1920x1080?text=IMAGE",
-      title: "INTRO",
+      title: "AKCE",
       dec: "SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT SAMPLE TEXT",
-      to: "Intro",
+      to: "Akce",
     },
   ];
   return (
