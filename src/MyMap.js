@@ -18,11 +18,11 @@ export default function MyMap() {
       </Box>
       <Box
         sx={{
-          padding: { xs: "4em 3em", sm: "4em 6em", xl: "4em 8em" },
+          padding: { xs: "0 0 4em 0", sm: "4em 6em", xl: "4em 8em" },
         }}
       >
         <Grid container spacing={4}>
-          <Grid item sm={12} md={6} xl={6}>
+          <Grid item xs={12} sm={12} md={6} xl={6}>
             <Card>
               <Map />
             </Card>
@@ -32,8 +32,8 @@ export default function MyMap() {
               <Typography variant={"h3"}>
                 Seznam akcí
               </Typography>
-              <Grid container spacing={4} sx={{ padding: {sm: "4em 0", md: "2em 4em", xl: "2em 4em"} }}>
-                <Grid item sm={12} xl={12}>
+              <Grid container spacing={4} sx={{ padding: {xs: "2em 0", sm: "4em 0", md: "2em 4em", xl: "2em 4em"} }}>
+                <Grid item xs ={12} sm={12} xl={12}>
                   <Card sx={{ height: "10vh", cursor: "pointer" }}>
                     <CardContent >
                       <Typography variant={"h4"} >
@@ -42,7 +42,7 @@ export default function MyMap() {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item sm={12} xl={12}>
+                <Grid item xs ={12} sm={12} xl={12}>
                   <Card sx={{ height: "10vh", cursor: "pointer" }}>
                     <CardContent>
                     <Typography variant={"h4"} >
@@ -51,7 +51,7 @@ export default function MyMap() {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item sm={12} xl={12}>
+                <Grid item xs ={12} sm={12} xl={12}>
                   <Card sx={{ height: "10vh", cursor: "pointer" }}>
                     <CardContent>
                     <Typography variant={"h4"} >
@@ -60,7 +60,7 @@ export default function MyMap() {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item sm={12} xl={12}>
+                <Grid item xs ={12} sm={12} xl={12}>
                   <Card sx={{ height: "10vh", cursor: "pointer" }}>
                     <CardContent>
                     <Typography variant={"h4"} >
